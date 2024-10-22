@@ -1,0 +1,64 @@
+// src/components/Gallery.scss
+
+.gallery-grid {
+    padding: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 16px;
+    max-width: 100%;
+  
+    .gallery-image {
+      max-width: 400px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  
+  .lightbox-dialog {
+    .lightbox-content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+  
+      .lightbox-image {
+        max-width: 90%;
+        max-height: 80vh;
+        animation: fadeIn 0.5s ease;
+      }
+  
+      .lightbox-prev, .lightbox-next, .lightbox-close {
+        position: absolute;
+        color: white;
+  
+        &.lightbox-prev {
+          left: 20px;
+        }
+  
+        &.lightbox-next {
+          right: 20px;
+        }
+  
+        &.lightbox-close {
+          top: 20px;
+          right: 20px;
+        }
+      }
+    }
+  
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  }
+  

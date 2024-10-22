@@ -1,0 +1,87 @@
+
+
+
+// start  etylimg  lightbox //
+
+// src/styles/_lightbox.scss
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .lightbox-content {
+      position: relative;
+      animation: fadeIn 0.5s ease-in-out; // Fade-in animation
+  
+      img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 8px;
+      }
+  
+      .close, .prev, .next {
+        position: absolute;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+.close {
+    top: 10px;
+    right: 10px;
+}
+
+.prev {
+        top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+      }
+  
+      .next {
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  
+
+
+body[dir="rtl"] {    
+    .prev {
+        left: unset;
+        right: 10px;
+    }
+
+    .next {
+        right: unset;
+        left: 10px;
+    }
+}
+
+.lightbox-content img {
+    animation: fadeIn 0.5s ease-in-out; // Apply animation to image
+  }
+  
+
+
+
